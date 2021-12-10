@@ -1,44 +1,18 @@
 const Joi = require('joi');
 
 const validate = {
-    registerUser: Joi.object({
-        fname: Joi.string().required(),
-        lname: Joi.string().required(),
-        email: Joi.string().email().required(),
-        password: Joi.string().min(6).max(16).required(),
+    addMentor: Joi.object({
+        name: Joi.string().required(),
     }),
-    loginUser: Joi.object({
-        email: Joi.string().email().required(),
-        password: Joi.string().min(6).max(16).required(),
+    addStudent: Joi.object({
+        name: Joi.string().required(),
     }),
-    forgotPassword: Joi.object({
-        email: Joi.string().email().required(),
+    assignStudent: Joi.object({
+        student: Joi.string().required(),
     }),
-    passwordReset: Joi.object({
-        password: Joi.string().min(6).max(16).required(),
-
-    }),
-    addURL: Joi.object({
-        original: Joi.string().required(),
-    }),
-    deleteURL: Joi.object({
-        id: Joi.string().min(24).max(24).required(),
-    }),
-    updateEvent: Joi.object({
-        name: Joi.string().optional(),
-        dateTime: Joi.string().optional(),
-        duration:Joi.string().required(),
-        description: Joi.optional(),
-        priority: Joi.string().optional(),
-        status: Joi.string().optional(),
-        contact: Joi.string().optional(),
-        type: Joi.string().optional(),
-        notes: Joi.optional(),
-        location: Joi.optional(),
-        link: Joi.optional()
-    }),
-    getEventsByType: Joi.object({
-        type: Joi.string().min(5).required(),
+    changeMentor: Joi.object({
+        name: Joi.string().required(),
+        mentor: Joi.string().required(),
     }),
 }
 
