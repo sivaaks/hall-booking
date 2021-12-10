@@ -13,7 +13,7 @@ const PORT=3001;
         await db.connect();
 
         app.use(cors({
-            origin:['http://localhost:3000','http://siva-assign-mentor.netlify.app']
+            origin:['http://localhost:3000','https://siva-assign-mentor.netlify.app']
         }))
         app.use(express.json());
 
