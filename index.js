@@ -2,8 +2,7 @@ const express= require('express');
 const cors=require('cors');
 const db= require('./shared/db.connect');
 
-const studentRoute= require('./routes/student.route');
-const mentorRoute= require('./routes/mentor.route');
+const roomsRoute= require('./routes/rooms.route');
 
 const app= express();
 const PORT=3001;
@@ -19,8 +18,7 @@ const PORT=3001;
 
        // app.use(authTokenCheck);
         
-        app.use('/student',studentRoute);
-        app.use('/mentor',mentorRoute);
+        app.use('/rooms',roomsRoute);
         
         app.listen(process.env.PORT||PORT);
 

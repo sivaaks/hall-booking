@@ -1,18 +1,17 @@
 const Joi = require('joi');
 
 const validate = {
-    addMentor: Joi.object({
+    createRoom:Joi.object({
         name: Joi.string().required(),
+        seats: Joi.number().required(),
+        amenities: Joi.string().required(),
+        price: Joi.number().required(),
     }),
-    addStudent: Joi.object({
-        name: Joi.string().required(),
-    }),
-    assignStudent: Joi.object({
-        student: Joi.string().required(),
-    }),
-    changeMentor: Joi.object({
-        name: Joi.string().required(),
-        mentor: Joi.string().required(),
+    bookRoom:Joi.object({
+        customerName: Joi.string().required(),
+        date: Joi.date().required(),
+        startTime: Joi.date().required(),
+        endTime: Joi.date().required(),
     }),
 }
 
